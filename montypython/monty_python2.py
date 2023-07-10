@@ -14,7 +14,7 @@ while True:        # sets up an infinite loop condition
         print('Congrats! You won a knuckle sandwich!. Try again!')
         break             # break statement escapes the while loop
     else:                 # if answer was wrong, and round is not yet equal to 3
-        print('Run that back again!')
+                print("You won a knuckle sandwich! Try again lol")
 
 #!/usr/bin/python3
 """Alta3 Research | RZFeeser
@@ -23,13 +23,13 @@ while True:        # sets up an infinite loop condition
 round = 0
 answer = " "
 
-while round < 3 and answer != "Brian":
+while round < 3 and answer != "The Color Purple":
     round += 1     # increase the round counter by 1
-    answer = input('Finish the movie title, "Monty Python\'s The Life of ______": ')
-    if answer == "Brian": # logic to check if user gave correct answer
-        print("Correct!")
+    answer = input('Name the movie this qoute is form, "All my life I had to fight!": ')
+    if answer == "The Color Purple": # logic to check if user gave correct answer
+        print("Whew! You had me worried for a second!")
     elif round == 3:    # logic to ensure round has not yet reached 3
-        print("Sorry, the answer was Brian.")
+        print("Sorry, the movie was The Color Purple, you should check it out!")
     else:                 # if answer was wrong
-        print("Sorry. Try again!")
+        print("You won a knuckle sandwich! Try again lol")
 
