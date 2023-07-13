@@ -1,7 +1,10 @@
+""" Personal Project, My favorite movie quotes"""
+
 #question = list
 #"question" & “answer” = dictionary
 # this is three dictionaries
 
+import crayons
 import random
 questions = [
         {"question": 'Name the movie this quote is from, "All my life I had to fight!"', "answer": "The Color Purple"},
@@ -10,41 +13,33 @@ questions = [
               ]
 
 def main():
-    print("let's play a game!")
-    print("I will give you a quote from a movie and you name that movie!")
-    print("Type 'done' to quit at any time.")
-    print("Good Luck!")
+    print(f'{crayons.yellow("Want to play a game!", bold=True)}')
+    print(f'{crayons.yellow("I will give you a quote from a movie and you name that movie!", bold=True)}')
+    print(f"Type {crayons.magenta('done', bold=True)} to quit at any time.")
+    print(f'{crayons.green("Good Luck!", bold=True)}')
 
     print("What should I call you?")
     you = input()
     print("Heyy,", you + "!")
 
     score = 0
-#    retry = false
     for i in range(3):
         question = random.choice(questions)
-        print(question["question"])
+        print(f"{crayons.cyan(question['question'])}")
         user_answer = input()
 
         if user_answer.lower() == 'done':
             break
 
         if user_answer.lower() == question["answer"].lower():
-            print("Whew! You had me worried for a second!")
+            print(f"{crayons.blue('Whew!')} You had me worried for a second!")
             score += 1
- #           retry = true
             questions.remove(question)
 
-        elif user_answer.lower() != question["answer"].lower():
-            print("You won a knuckle sandwich! Try again lol")
-  #          retry = false
-   #     if retry:
-    #        user_answer.lower() != question["answer"].lower():
-     #       pass
-
         else:
-            print(f"Boooo tomatoes tomatoes! The movie is {question['answer']}.")
-
+            print(f"{crayons.red('Boooo', bold=True)} {crayons.red('tomatoes tomatoes!')} The movie is {crayons.cyan(question['answer'])}")
+            score -= 0
+            questions.remove(question)
     if score > 0:
         print(f"\nThats a wrap folks! Your score is {score}/{len(questions)}.")
 
