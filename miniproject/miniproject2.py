@@ -15,12 +15,14 @@ questions = [
 def main():
     print(f'{crayons.yellow("Want to play a game!", bold=True)}')
     print(f'{crayons.yellow("I will give you a quote from a movie and you name that movie!", bold=True)}')
-    print(f"Type {crayons.magenta('done', bold=True)} to quit at any time.")
+    print(f"{crayons.yellow('Type', bold=True)} {crayons.magenta('done', bold=True)} {crayons.yellow('to quit at any time.', bold=True)}")
     print(f'{crayons.green("Good Luck!", bold=True)}')
+    print(f'{crayons.magenta("**********************************")}')
 
     print("What should I call you?")
     you = input()
     print("Heyy,", you + "!")
+    print(f'{crayons.magenta("***********************************")}')
 
     score = 0
     for i in range(3):
@@ -41,7 +43,8 @@ def main():
             score -= 0
             questions.remove(question)
     if score > 0:
-        print(f"\nThats a wrap folks! Your score is {score}/{len(questions)}.")
-
+        print(f'\n{crayons.yellow("See! I knew I liked you for a reason! Your score is")} {score}/{len(questions)}.')
+    if score < 3:
+        print(f'\n{crayons.yellow("Sucks to be you, upgrade your watch list! Your score is")} {score}/{len(questions)}.')
 if __name__ == "__main__":
     main()
