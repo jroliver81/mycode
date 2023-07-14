@@ -4,7 +4,6 @@
 #"question" & “answer” = dictionary
 # this is three dictionaries
 
-from PIL import Image
 import crayons
 import random
 questions = [
@@ -31,7 +30,6 @@ def main():
     print(f'{crayons.magenta("***********************************")}')
 
     score = 0
-    image = Image.open(".jpg")
 
     for i in range(6):
         question = random.choice(questions)
